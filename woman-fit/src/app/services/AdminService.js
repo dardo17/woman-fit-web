@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001";
+const API_URL = "node-js-production-08e1.up.railway.app";
 
 export async function obtenerClientes() {
   const token = localStorage.getItem("token");
@@ -28,7 +28,7 @@ export async function obtenerMembresias() {
   const token = localStorage.getItem("token");
 
   const response = await fetch(
-    "node-js-production-08e1.up.railway.app/membresia",
+    `${API_URL}/membresia`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ export async function crearMembresia(membresia) {
   const token = localStorage.getItem("token");
 
   const response = await fetch(
-    "node-js-production-08e1.up.railway.app/membresia",
+    `${API_URL}/membresia`,
     {
       method: "POST",
       headers: {
@@ -61,7 +61,7 @@ export async function actualizarMembresia(id, membresia) {
   const token = localStorage.getItem("token");
 
   const response = await fetch(
-    `node-js-production-08e1.up.railway.app/membresia/${id}`,
+    `${API_URL}/membresia/${id}`,
     {
       method: "PUT",
       headers: {
