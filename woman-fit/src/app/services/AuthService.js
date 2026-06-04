@@ -1,4 +1,4 @@
-const API_URL = "node-js-production-08e1.up.railway.app";
+const API_URL = "https://node-js-production-08e1.up.railway.app";
 
 export async function obtenerPerfilCompleto() {
   const token = localStorage.getItem("token");
