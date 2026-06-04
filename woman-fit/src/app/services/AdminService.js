@@ -28,7 +28,7 @@ export async function obtenerMembresias() {
   const token = localStorage.getItem("token");
 
   const response = await fetch(
-    "http://localhost:3001/membresia",
+    "node-js-production-08e1.up.railway.app/membresia",
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ export async function crearMembresia(membresia) {
   const token = localStorage.getItem("token");
 
   const response = await fetch(
-    "http://localhost:3001/membresia",
+    "node-js-production-08e1.up.railway.app/membresia",
     {
       method: "POST",
       headers: {
@@ -61,7 +61,7 @@ export async function actualizarMembresia(id, membresia) {
   const token = localStorage.getItem("token");
 
   const response = await fetch(
-    `http://localhost:3001/membresia/${id}`,
+    `node-js-production-08e1.up.railway.app/membresia/${id}`,
     {
       method: "PUT",
       headers: {

@@ -1,16 +1,13 @@
-const API_URL = "http://localhost:3001";
+const API_URL = "node-js-production-08e1.up.railway.app";
 
 export async function obtenerPerfilCompleto() {
   const token = localStorage.getItem("token");
 
-  const perfilResponse = await fetch(
-    `${API_URL}/api/auth/perfil`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const perfilResponse = await fetch(`${API_URL}/api/auth/perfil`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   if (!perfilResponse.ok) {
     throw new Error("Error obteniendo perfil");
@@ -24,7 +21,7 @@ export async function obtenerPerfilCompleto() {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }
+    },
   );
 
   if (!usuarioResponse.ok) {
@@ -37,14 +34,11 @@ export async function obtenerPerfilCompleto() {
 export async function obtenerMembresias() {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(
-    "http://localhost:3001/membresia",
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const response = await fetch(`${API_URL}/membresia`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   return await response.json();
 }
