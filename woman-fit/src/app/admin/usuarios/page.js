@@ -178,7 +178,7 @@ export default function UsuariosPage() {
                       nombre: e.target.value,
                     })
                   }
-                  className="p-3 rounded-xl border border-pink-200"
+                  className="p-3 rounded-xl border border-pink-200 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300"
                 />
 
                 <input
@@ -191,7 +191,7 @@ export default function UsuariosPage() {
                       apellidos: e.target.value,
                     })
                   }
-                  className="p-3 rounded-xl border border-pink-200"
+                  className="p-3 rounded-xl border border-pink-200 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300"
                 />
 
                 <input
@@ -204,7 +204,7 @@ export default function UsuariosPage() {
                       userName: e.target.value,
                     })
                   }
-                  className="p-3 rounded-xl border border-pink-200"
+                  className="p-3 rounded-xl border border-pink-200 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300"
                 />
 
                 <input
@@ -217,7 +217,7 @@ export default function UsuariosPage() {
                       correo: e.target.value,
                     })
                   }
-                  className="p-3 rounded-xl border border-pink-200"
+                  className="p-3 rounded-xl border border-pink-200 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300"
                 />
 
                 <input
@@ -230,7 +230,7 @@ export default function UsuariosPage() {
                       telefono: e.target.value,
                     })
                   }
-                  className="p-3 rounded-xl border border-pink-200"
+                  className="p-3 rounded-xl border border-pink-200 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300"
                 />
 
                 {!modoEdicion && (
@@ -244,7 +244,7 @@ export default function UsuariosPage() {
                         contrasenia: e.target.value,
                       })
                     }
-                    className="p-3 rounded-xl border border-pink-200"
+                    className="p-3 rounded-xl border border-pink-200 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300"
                   />
                 )}
 
@@ -256,7 +256,7 @@ export default function UsuariosPage() {
                       rol: e.target.value,
                     })
                   }
-                  className="p-3 rounded-xl border border-pink-200"
+                  className="p-3 rounded-xl border border-pink-200 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-300"
                 >
                   <option value="ADMIN">ADMIN</option>
                   <option value="ENTRENADOR">ENTRENADOR</option>
@@ -305,17 +305,11 @@ export default function UsuariosPage() {
                       {usuario.nombre} {usuario.apellidos}
                     </td>
 
-                    <td className="text-gray-700">
-                      {usuario.userName}
-                    </td>
+                    <td className="text-gray-700">{usuario.userName}</td>
 
-                    <td className="text-gray-700">
-                      {usuario.correo}
-                    </td>
+                    <td className="text-gray-700">{usuario.correo}</td>
 
-                    <td className="text-gray-700">
-                      {usuario.telefono}
-                    </td>
+                    <td className="text-gray-700">{usuario.telefono}</td>
 
                     <td>
                       <span
@@ -323,8 +317,8 @@ export default function UsuariosPage() {
                           usuario.rol === "ADMIN"
                             ? "bg-purple-100 text-purple-700"
                             : usuario.rol === "ENTRENADOR"
-                            ? "bg-blue-100 text-blue-700"
-                            : "bg-pink-100 text-pink-700"
+                              ? "bg-blue-100 text-blue-700"
+                              : "bg-pink-100 text-pink-700"
                         }`}
                       >
                         {usuario.rol}
