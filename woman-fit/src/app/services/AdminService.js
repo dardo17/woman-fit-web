@@ -27,14 +27,11 @@ export async function obtenerEntrenadores() {
 export async function obtenerMembresias() {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(
-    `${API_URL}/membresia`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const response = await fetch(`${API_URL}/membresia`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   return await response.json();
 }
@@ -42,17 +39,14 @@ export async function obtenerMembresias() {
 export async function crearMembresia(membresia) {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(
-    `${API_URL}/membresia`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(membresia),
-    }
-  );
+  const response = await fetch(`${API_URL}/membresia`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(membresia),
+  });
 
   return await response.json();
 }
@@ -60,17 +54,14 @@ export async function crearMembresia(membresia) {
 export async function actualizarMembresia(id, membresia) {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(
-    `${API_URL}/membresia/${id}`,
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(membresia),
-    }
-  );
+  const response = await fetch(`${API_URL}/membresia/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(membresia),
+  });
 
   return await response.json();
 }
@@ -78,14 +69,11 @@ export async function actualizarMembresia(id, membresia) {
 export async function obtenerUsuarios() {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/usuario`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const response = await fetch(`${API_URL}/usuario`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   return await response.json();
 }
@@ -93,17 +81,14 @@ export async function obtenerUsuarios() {
 export async function crearUsuario(usuario) {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/usuario`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(usuario),
-    }
-  );
+  const response = await fetch(`${API_URL}/usuario`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(usuario),
+  });
 
   return await response.json();
 }
@@ -111,17 +96,14 @@ export async function crearUsuario(usuario) {
 export async function actualizarUsuario(id, usuario) {
   const token = localStorage.getItem("token");
 
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/usuario/${id}`,
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(usuario),
-    }
-  );
+  const response = await fetch(`${API_URL}/usuario/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(usuario),
+  });
 
   return await response.json();
 }
