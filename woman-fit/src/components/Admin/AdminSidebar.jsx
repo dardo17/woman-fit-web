@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
   LayoutDashboard,
@@ -8,9 +9,11 @@ import {
   Calendar,
   Wallet,
   Settings,
+  userCog,
 } from "lucide-react";
 
 export default function AdminSidebar({ usuario }) {
+  const pathname = usePathname();
   const menuItems = [
     {
       label: "Dashboard",
@@ -31,6 +34,11 @@ export default function AdminSidebar({ usuario }) {
       label: "Entrenadores",
       href: "/admin/entrenadores",
       icon: <Dumbbell size={20} />,
+    },
+    {
+      label: "Usuarios",
+      href: "/admin/usuarios",
+      icon: <UserCog size={20} />,
     },
     {
       label: "Asistencias",
@@ -79,7 +87,7 @@ export default function AdminSidebar({ usuario }) {
                 font-medium
 
                 ${
-                  index === 0
+                  pathname === item.href
                     ? "bg-gradient-to-r from-pink-400 to-pink-300 text-white shadow-[0_0_25px_rgba(255,77,141,0.25)]"
                     : "text-gray-600 hover:bg-pink-50 hover:text-pink-500"
                 }
@@ -99,14 +107,10 @@ export default function AdminSidebar({ usuario }) {
 
         <div>
           <h3 className="font-semibold text-gray-700">
-            {usuario
-              ? `${usuario.nombre} ${usuario.apellidos}`
-              : "Cargando..."}
+            {usuario ? `${usuario.nombre} ${usuario.apellidos}` : "Cargando..."}
           </h3>
 
-          <p className="text-sm text-gray-400">
-            {usuario?.rol || ""}
-          </p>
+          <p className="text-sm text-gray-400">{usuario?.rol || ""}</p>
         </div>
       </div>
     </aside>
