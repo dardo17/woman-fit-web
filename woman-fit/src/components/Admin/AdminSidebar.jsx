@@ -9,7 +9,7 @@ import {
   Calendar,
   Wallet,
   Settings,
-  userCog,
+  UserCog,
 } from "lucide-react";
 
 export default function AdminSidebar({ usuario }) {
