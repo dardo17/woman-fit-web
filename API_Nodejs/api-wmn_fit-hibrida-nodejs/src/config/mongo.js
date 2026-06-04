@@ -1,15 +1,16 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
+const mongoose = require("mongoose");
+require("dotenv").config();
 
+async function connectMongo() {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
 
-async function connectMongo(){
-    try{
-        await mongoose.connect(process.env.MONGO_URI);
-        console.log('Conexion exitosa a MongoDB');
-    } catch (error){
-        console.error('Error al conectar con MongoDB:', error.message);
-        throw error;
-    }
+    console.log("Conexion exitosa a MongoDB");
+    console.log("DB ACTUAL:", mongoose.connection.name);
+  } catch (error) {
+    console.error("Error al conectar con MongoDB:", error.message);
+    throw error;
+  }
 }
 
-module.exports = connectMongo;  
+module.exports = connectMongo;
