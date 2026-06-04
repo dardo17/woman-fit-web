@@ -49,7 +49,9 @@ export default function MembresiasPage() {
     try {
       const data = await obtenerMembresias();
 
-      console.log(data);
+      console.log("TIPO:", typeof data);
+      console.log("DATA:", data);
+      console.log("ES ARRAY:", Array.isArray(data));
 
       setMembresias(data);
     } catch (error) {
