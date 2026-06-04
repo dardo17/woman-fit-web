@@ -17,7 +17,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch("node-js-production-08e1.up.railway.app", {
+      const response = await fetch("https://node-js-production-08e1.up.railway.app/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
